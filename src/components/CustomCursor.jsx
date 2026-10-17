@@ -5,14 +5,13 @@ export default function CustomCursor() {
   const [followerPos, setFollowerPos] = useState({ x: -100, y: -100 });
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [isTouchDevice] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  });
 
   useEffect(() => {
-    // Disable on touch devices
-    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-      setIsTouchDevice(true);
-      return;
-    }
+    if (isTouchDevice) return;
 
     const onMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
@@ -38,7 +37,7 @@ export default function CustomCursor() {
       window.removeEventListener('mousemove', handleHoverCheck);
       document.removeEventListener('mouseleave', onMouseLeave);
     };
-  }, []);
+  }, [isTouchDevice]);
 
   // Smooth lerp for follower circle
   useEffect(() => {

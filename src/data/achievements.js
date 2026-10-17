@@ -23,14 +23,16 @@ export const achievements = [
   },
   {
     id: "bharat-builds",
-    title: "BHARAT BUILDS TOUR HACKATHON",
-    event: "AWS / WeMakeDevs Innovation Challenge",
-    organization: "Polaris Technology School",
+    title: "BHARAT BUILDS TOUR — FIRST COMMIT",
+    event: "First Commit Hackathon (Event 01)",
+    organization: "WeMakeDevs × AWS",
     category: "HACKATHON PARTICIPANT",
     featured: true,
-    highlight: false,
-    date: "2026",
-    description: "Engaged in hands-on cloud and software architecture problem solving at the regional Bharat Builds Tour Hackathon."
+    highlight: true,
+    date: "20 September 2026",
+    certificateId: "X99HBN7TSC",
+    certificateUrl: "/certificates/wemakedevs-aws-bharat-builds-tour-first-commit.png",
+    description: "Participated in First Commit, the inaugural event of the Bharat Builds Tour hackathon series organized by WeMakeDevs in collaboration with AWS, and developed and shipped a project during the hackathon."
   },
   {
     id: "microsoft-ai-workshop",

@@ -53,7 +53,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="w-full py-28 bg-[#08090D] border-b border-[#F1EEE8]/10 relative">
-      <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-10 md:px-16">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-10 md:px-16">
         
         {/* Giant Headline Row */}
         <div className="mb-20 border-b border-[#F1EEE8]/10 pb-16">
@@ -61,7 +61,7 @@ export default function Contact() {
             // 09. GET IN TOUCH
           </span>
 
-          <h2 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-[#F1EEE8] tracking-tighter leading-[0.85] uppercase font-extrabold">
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-[#F1EEE8] tracking-tighter leading-[0.85] uppercase font-extrabold">
             LET'S WORK <br />
             TOGETHER.
           </h2>
@@ -72,26 +72,26 @@ export default function Contact() {
         </div>
 
         {/* 2-Column Contact Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
           
           {/* Left Column: Direct Contact Channels */}
           <div className="lg:col-span-5 space-y-6">
             
-            <div className="p-8 bg-[#101116] border border-[#F1EEE8]/10 rounded-2xl space-y-4">
+            <div className="p-5 sm:p-8 bg-[#101116] border border-[#F1EEE8]/10 rounded-2xl space-y-4">
               <span className="font-mono text-[10px] text-[#777772] uppercase tracking-widest block border-b border-[#F1EEE8]/10 pb-3">
                 DIRECT CONTACT CHANNELS
               </span>
 
               <a
                 href={`mailto:${personal.email}`}
-                className="flex items-center gap-4 group p-3.5 border border-[#F1EEE8]/10 rounded-xl hover:border-[#F1EEE8]/30 transition-colors"
+                className="flex items-center gap-3 sm:gap-4 group p-3 sm:p-3.5 border border-[#F1EEE8]/10 rounded-xl hover:border-[#F1EEE8]/30 transition-colors"
               >
-                <div className="p-2.5 border border-[#F1EEE8]/10 rounded-lg text-[#F1EEE8] group-hover:bg-[#F1EEE8] group-hover:text-[#08090D] transition-colors">
+                <div className="p-2 sm:p-2.5 border border-[#F1EEE8]/10 rounded-lg text-[#F1EEE8] group-hover:bg-[#F1EEE8] group-hover:text-[#08090D] transition-colors shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <span className="font-mono text-[10px] text-[#777772] uppercase block">EMAIL</span>
-                  <span className="font-mono text-xs text-[#F1EEE8] font-medium">{personal.email}</span>
+                  <span className="font-mono text-xs text-[#F1EEE8] font-medium break-all">{personal.email}</span>
                 </div>
               </a>
 
@@ -163,7 +163,7 @@ export default function Contact() {
             <form
               ref={formRef}
               onSubmit={handleSubmit}
-              className="p-8 md:p-10 bg-[#101116] border border-[#F1EEE8]/10 rounded-2xl space-y-6 relative"
+              className="p-5 sm:p-8 md:p-10 bg-[#101116] border border-[#F1EEE8]/10 rounded-2xl space-y-6 relative"
             >
               <span className="font-mono text-xs text-[#777772] uppercase tracking-widest block pb-4 border-b border-[#F1EEE8]/10">
                 // TRANSMIT DIRECT MESSAGE
@@ -195,7 +195,7 @@ export default function Contact() {
                   name="user_name"
                   required
                   placeholder="Your Name / Organization"
-                  className="w-full px-4 py-3 bg-[#08090D] border border-[#F1EEE8]/10 focus:border-[#F1EEE8] text-[#F1EEE8] font-mono text-xs rounded-xl outline-none transition-colors"
+                  className="w-full px-4 py-3 bg-[#08090D] border border-[#F1EEE8]/10 focus:border-[#F1EEE8] text-[#F1EEE8] font-mono text-xs rounded-xl outline-none transition-colors min-h-[44px]"
                 />
               </div>
 

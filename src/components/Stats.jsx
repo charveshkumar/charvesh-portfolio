@@ -27,12 +27,12 @@ export default function Stats() {
 
   return (
     <section className="w-full bg-[#08090D] border-y border-[#F1EEE8]/10 py-16 relative">
-      <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-10 md:px-16">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-[#F1EEE8]/10">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-10 md:px-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8 divide-y-0 lg:divide-x divide-[#F1EEE8]/10">
           {statItems.map((stat, idx) => (
             <div
               key={idx}
-              className={`flex flex-col justify-between ${idx !== 0 ? 'pt-6 lg:pt-0 lg:pl-8' : ''}`}
+              className={`flex flex-col justify-between p-3.5 sm:p-5 lg:p-0 bg-[#101116]/40 lg:bg-transparent rounded-xl lg:rounded-none border lg:border-0 border-[#F1EEE8]/10 ${idx !== 0 ? 'lg:pl-8' : ''}`}
             >
               <div>
                 <span className="font-mono text-[10px] text-[#777772] uppercase tracking-widest block mb-3">

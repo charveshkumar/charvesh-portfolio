@@ -4,7 +4,7 @@ import { educationTimeline } from '../data/experience';
 export default function Education() {
   return (
     <section id="education" className="w-full py-28 bg-[#08090D] border-b border-[#F1EEE8]/10 relative">
-      <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-10 md:px-16">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-10 md:px-16">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end pb-8 mb-16 border-b border-[#F1EEE8]/10">
@@ -22,14 +22,14 @@ export default function Education() {
         </div>
 
         {/* Editorial Vertical Timeline */}
-        <div className="relative pl-6 md:pl-10 border-l border-[#F1EEE8]/15 space-y-12">
+        <div className="relative pl-4 sm:pl-6 md:pl-10 border-l border-[#F1EEE8]/15 space-y-8 sm:space-y-12">
           {educationTimeline.map((item, idx) => (
             <div key={idx} className="relative group">
               
               {/* Timeline Dot */}
-              <div className="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 bg-[#08090D] border-2 border-[#F1EEE8] rounded-full group-hover:bg-[#F1EEE8] transition-all" />
+              <div className="absolute -left-[25px] sm:-left-[31px] md:-left-[47px] top-1.5 w-4 h-4 bg-[#08090D] border-2 border-[#F1EEE8] rounded-full group-hover:bg-[#F1EEE8] transition-all" />
 
-              <div className="p-8 bg-[#101116] border border-[#F1EEE8]/10 rounded-2xl space-y-4 hover:border-[#F1EEE8]/30 transition-colors">
+              <div className="p-5 sm:p-8 bg-[#101116] border border-[#F1EEE8]/10 rounded-2xl space-y-4 hover:border-[#F1EEE8]/30 transition-colors">
                 
                 {/* Header Row */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#F1EEE8]/10">

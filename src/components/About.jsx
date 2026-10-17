@@ -4,7 +4,7 @@ import { personal } from '../data/personal';
 export default function About() {
   return (
     <section id="about" className="w-full py-28 bg-[#08090D] border-b border-[#F1EEE8]/10 relative">
-      <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-10 md:px-16">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-10 md:px-16">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end pb-8 mb-16 border-b border-[#F1EEE8]/10">
@@ -22,7 +22,7 @@ export default function About() {
         </div>
 
         {/* Asymmetric Split Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           
           {/* Left Column: Large Editorial Slogan */}
           <div className="lg:col-span-5 space-y-6">
@@ -30,7 +30,7 @@ export default function About() {
               Building intelligent solutions with AI, ML and modern web technologies.
             </h3>
             
-            <div className="p-6 bg-[#101116] border border-[#F1EEE8]/10 rounded-xl space-y-4">
+            <div className="p-4 sm:p-6 bg-[#101116] border border-[#F1EEE8]/10 rounded-xl space-y-4">
               <div className="font-mono text-xs text-[#777772] uppercase tracking-wider">
                 ACADEMIC PROFILE
               </div>

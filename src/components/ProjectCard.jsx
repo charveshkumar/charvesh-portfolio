@@ -29,7 +29,7 @@ export default function ProjectCard({ project, onSelectProject }) {
         {/* Visual Showcase Banner */}
         <div 
           onClick={() => onSelectProject(project)}
-          className={`lg:col-span-7 cursor-pointer group/image relative min-h-[300px] sm:min-h-[360px] rounded-2xl overflow-hidden border border-[#F1EEE8]/10 bg-[#101116] bg-gradient-to-br ${project.imageGradient} p-8 flex flex-col justify-between transition-transform duration-700 hover:scale-[1.01]`}
+          className={`lg:col-span-7 cursor-pointer group/image relative min-h-[250px] sm:min-h-[360px] rounded-2xl overflow-hidden border border-[#F1EEE8]/10 bg-[#101116] bg-gradient-to-br ${project.imageGradient} p-5 sm:p-8 flex flex-col justify-between transition-transform duration-700 hover:scale-[1.01]`}
         >
           <div className="absolute inset-0 bg-noise-overlay opacity-30 pointer-events-none" />
           

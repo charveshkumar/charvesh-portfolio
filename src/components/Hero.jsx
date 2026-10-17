@@ -1,6 +1,6 @@
 import React from 'react';
-import { Phone, ArrowDown } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, InstagramIcon } from './Icons';
+import { Phone, ArrowDown, FileText } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './Icons';
 import { personal } from '../data/personal';
 
 export default function Hero() {
@@ -12,32 +12,34 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen pt-6 pb-16 flex flex-col justify-between overflow-hidden bg-ambient-cinematic bg-noise-overlay text-[#F1EEE8]">
+    <section id="home" className="relative min-h-screen pt-4 sm:pt-6 pb-12 sm:pb-16 flex flex-col justify-between overflow-hidden bg-ambient-cinematic bg-noise-overlay text-[#F1EEE8]">
       
       {/* Soft Cinematic Ambient Lighting Spots */}
       <div className="absolute top-[-5%] left-[25%] w-[700px] h-[700px] bg-white/[0.035] rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute bottom-[5%] right-[15%] w-[600px] h-[600px] bg-white/[0.025] rounded-full blur-[140px] pointer-events-none" />
 
       {/* 1. TOP HEADER CONTROLS BAR — FULL VIEWPORT EDGE */}
-      <header className="w-full max-w-[1800px] mx-auto px-6 sm:px-10 md:px-16 flex justify-between items-center z-30 pt-4">
+      <header className="w-full max-w-[1800px] mx-auto px-4 sm:px-10 md:px-16 flex justify-between items-center z-30 pt-2 sm:pt-4">
         {/* TOP LEFT: Minimal Outlined CALL Button */}
         <a
-          href={`tel:${personal.phone}`}
-          className="group inline-flex items-center gap-2.5 px-5 py-2.5 border border-[#F1EEE8]/30 hover:border-[#F1EEE8] rounded-lg font-mono text-xs uppercase tracking-widest text-[#F1EEE8] transition-all duration-300 hover:bg-[#F1EEE8]/10 shadow-lg shadow-black/40"
+          href={`tel:${personal.phone.replace(/\s+/g, '')}`}
+          className="group inline-flex items-center gap-2 px-3.5 py-2 sm:px-5 sm:py-2.5 border border-[#F1EEE8]/30 hover:border-[#F1EEE8] rounded-lg font-mono text-xs uppercase tracking-widest text-[#F1EEE8] transition-all duration-300 hover:bg-[#F1EEE8]/10 shadow-lg shadow-black/40 min-h-[44px]"
           title={`Call ${personal.name}`}
+          aria-label={`Call ${personal.name}`}
         >
           <Phone className="w-4 h-4 text-[#B7B5B0] group-hover:text-[#F1EEE8] transition-colors" />
           <span>CALL</span>
         </a>
 
-        {/* TOP RIGHT: Monochrome Social Icons */}
-        <div className="flex items-center gap-6">
+        {/* TOP RIGHT: Social & Resume Icons (GitHub | LinkedIn | Resume) */}
+        <div className="flex items-center gap-1 sm:gap-4">
           <a
             href={personal.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#B7B5B0] hover:text-[#F1EEE8] hover:scale-110 transition-all duration-300 p-1.5"
+            className="text-[#B7B5B0] hover:text-[#F1EEE8] hover:scale-110 transition-all duration-300 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-white/5"
             aria-label="GitHub Profile"
+            title="GitHub"
           >
             <GithubIcon className="w-4.5 h-4.5" />
           </a>
@@ -45,60 +47,66 @@ export default function Hero() {
             href={personal.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#B7B5B0] hover:text-[#F1EEE8] hover:scale-110 transition-all duration-300 p-1.5"
+            className="text-[#B7B5B0] hover:text-[#F1EEE8] hover:scale-110 transition-all duration-300 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-white/5"
             aria-label="LinkedIn Profile"
+            title="LinkedIn"
           >
             <LinkedinIcon className="w-4 h-4.5" />
           </a>
           <a
-            href={personal.instagram}
+            href={personal.resume || "/resume/Charvesh_Kumar_Resume.pdf"}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#B7B5B0] hover:text-[#F1EEE8] hover:scale-110 transition-all duration-300 p-1.5"
-            aria-label="Instagram Profile"
+            className="relative group/resume text-[#B7B5B0] hover:text-[#F1EEE8] hover:scale-110 transition-all duration-300 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-white/5"
+            aria-label="View Resume"
+            title="Resume"
           >
-            <InstagramIcon className="w-4.5 h-4.5" />
+            <FileText className="w-4.5 h-4.5" />
+            {/* Desktop Tooltip */}
+            <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-[#14151C] border border-[#F1EEE8]/15 text-[#F1EEE8] text-[10px] font-mono uppercase tracking-wider rounded pointer-events-none opacity-0 group-hover/resume:opacity-100 transition-opacity duration-200 hidden sm:block whitespace-nowrap shadow-lg z-30">
+              Resume
+            </span>
           </a>
         </div>
       </header>
 
       {/* 2. HERO CENTRAL COMPOSITION: GIANT TYPOGRAPHY + PORTRAIT POSITIONED BELOW */}
-      <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-10 md:px-16 my-auto py-6 relative z-10 flex flex-col items-center">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-10 md:px-16 my-auto py-4 sm:py-6 relative z-10 flex flex-col items-center">
         
         {/* Availability / Status Badge */}
-        <div className="flex items-center gap-3 mb-6 font-mono text-xs sm:text-sm md:text-base text-[#B7B5B0] tracking-widest uppercase">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#F1EEE8] animate-pulse" />
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8 font-mono text-[11px] sm:text-xs md:text-sm text-[#B7B5B0] tracking-wider uppercase text-center px-2">
+          <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#F1EEE8] animate-pulse shrink-0" />
           <span className="border-b border-[#F1EEE8]/20 pb-0.5">{personal.status}</span>
-          <span className="text-[#777772] hidden sm:inline">• BANGALORE, INDIA</span>
+          <span className="text-[#777772] inline-block">• BANGALORE, INDIA</span>
         </div>
 
         {/* Unified Name & Portrait Composition */}
-        <div className="relative w-full flex flex-col items-center text-center">
+        <div className="relative w-full flex flex-col items-center text-center overflow-visible">
           
-          {/* GIANT NAME TYPOGRAPHY - POSTER SCALE */}
+          {/* GIANT NAME TYPOGRAPHY - BLACK FILL WITH WHITE OUTLINE & MILD WHITE SHADE */}
           <div className="flex flex-col items-center justify-center select-none w-full relative z-10">
-            <h1 className="font-display text-[15vw] sm:text-[16vw] md:text-[160px] lg:text-[200px] xl:text-[240px] 2xl:text-[270px] uppercase font-extrabold tracking-tighter leading-[0.82] text-[#F1EEE8] hero-name-stroke drop-shadow-2xl">
+            <h1 className="font-display text-[15vw] sm:text-[16vw] md:text-[160px] lg:text-[200px] xl:text-[240px] 2xl:text-[270px] uppercase font-extrabold tracking-tight leading-[0.86] hero-name-stroke">
               CHARVESH
             </h1>
-            <h1 className="font-display text-[15vw] sm:text-[16vw] md:text-[160px] lg:text-[200px] xl:text-[240px] 2xl:text-[270px] uppercase font-extrabold tracking-tighter leading-[0.82] text-[#F1EEE8] hero-name-stroke drop-shadow-2xl">
+            <h1 className="font-display text-[15vw] sm:text-[16vw] md:text-[160px] lg:text-[200px] xl:text-[240px] 2xl:text-[270px] uppercase font-extrabold tracking-tight leading-[0.86] hero-name-stroke">
               KUMAR
             </h1>
           </div>
 
-          {/* EDITORIAL MONOCHROME PORTRAIT POSITIONED BELOW NAME */}
-          <div className="relative -mt-4 sm:-mt-6 md:-mt-8 lg:-mt-10 z-20 group">
-            <div className="w-48 sm:w-60 md:w-72 lg:w-[280px] xl:w-[295px] aspect-[4/5] rounded-3xl overflow-hidden border border-[#F1EEE8]/20 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] bg-[#101116] transition-transform duration-700 hover:scale-[1.02]">
+          {/* EDITORIAL MONOCHROME PORTRAIT - POSITIONED COMPLETELY BELOW KUMAR */}
+          <div className="relative mt-6 sm:mt-8 md:mt-10 lg:mt-12 z-20 group flex flex-col items-center">
+            <div className="w-36 sm:w-44 md:w-52 lg:w-56 xl:w-60 aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden border border-[#F1EEE8]/20 shadow-[0_20px_50px_rgba(0,0,0,0.9)] bg-[#101116] transition-transform duration-700 hover:scale-[1.02]">
               <img
                 src="/images/profile/charvesh.jpg"
                 alt="Charvesh Kumar - AI & Machine Learning Developer"
                 className="w-full h-full object-cover object-top grayscale contrast-125 brightness-95 group-hover:contrast-110 transition-all duration-700"
                 loading="eager"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#08090D] via-transparent to-transparent opacity-60 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#08090D]/50 via-transparent to-transparent pointer-events-none" />
             </div>
 
-            {/* Subtle Pill Tag Below Image */}
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-[#101116]/95 border border-[#F1EEE8]/20 rounded-full font-mono text-xs tracking-widest uppercase text-[#B7B5B0] whitespace-nowrap shadow-xl backdrop-blur-md">
+            {/* AI / ML DEVELOPER Badge - Positioned Directly Beneath Photograph */}
+            <div className="mt-3 sm:mt-4 px-3.5 sm:px-4 py-1 sm:py-1.5 bg-[#101116]/95 border border-[#F1EEE8]/20 rounded-full font-mono text-[10px] sm:text-xs tracking-widest uppercase text-[#B7B5B0] whitespace-nowrap shadow-xl backdrop-blur-md">
               AI / ML DEVELOPER
             </div>
           </div>
@@ -106,7 +114,7 @@ export default function Hero() {
         </div>
 
         {/* 3. HERO LOWER ASYMMETRIC METADATA ROW */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-8 pt-12 md:pt-16 items-end border-t border-[#F1EEE8]/10 mt-12 sm:mt-14">
+        <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 pt-8 sm:pt-12 md:pt-16 items-end border-t border-[#F1EEE8]/10 mt-8 sm:mt-12">
           
           {/* Lower Left Block: Primary Role & Identity */}
           <div className="md:col-span-6 space-y-2.5">

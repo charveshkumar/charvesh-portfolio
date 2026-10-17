@@ -17,7 +17,7 @@ export const personal = {
   semester: "4-1",
   cgpa: "7.4",
   percentage: "66.60%",
-  resume: "/resume.pdf",
+  resume: "/resume/Charvesh_Kumar_Resume.pdf",
   status: "AVAILABLE FOR INTERNSHIP",
   tagline: "Building intelligent solutions with AI, ML and modern web technologies.",
   aboutText: "I am a B.Tech student specializing in Artificial Intelligence and Machine Learning, with a strong interest in Python, web development, and emerging AI technologies. I enjoy building practical projects, learning new technologies, and solving real-world problems through innovative solutions. I am a motivated and continuous learner looking to develop my technical skills and gain professional experience.",

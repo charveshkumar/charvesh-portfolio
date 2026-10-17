@@ -15,6 +15,21 @@
   --color-text-primary: #F1EEE8;
   --color-text-secondary: #B7B5B0;
   --color-text-muted: #777772;
+
+  /* Typography scale reduced by 20% from standard present sizes */
+  --text-xs: 0.6rem;
+  --text-sm: 0.7rem;
+  --text-base: 0.8rem;
+  --text-lg: 0.9rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.2rem;
+  --text-3xl: 1.5rem;
+  --text-4xl: 1.8rem;
+  --text-5xl: 2.4rem;
+  --text-6xl: 3rem;
+  --text-7xl: 3.6rem;
+  --text-8xl: 4.8rem;
+  --text-9xl: 6.4rem;
 }
 
 @layer base {
@@ -33,14 +48,34 @@
   html {
     scroll-behavior: initial;
     color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
     background-color: #08090D;
     color: #F1EEE8;
     font-family: 'DM Sans', 'Inter', sans-serif;
+    font-size: var(--text-base);
     overflow-x: hidden;
+    max-width: 100%;
     letter-spacing: -0.01em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  .text-\[10px\] {
+    font-size: 8px !important;
+  }
+
+  .text-\[11px\] {
+    font-size: 9px !important;
   }
 
   h1, h2, h3, .font-display {
@@ -107,8 +142,26 @@
 }
 
 .hero-name-stroke {
-  -webkit-text-stroke: 1px rgba(8, 9, 13, 0.65);
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000;
+  -webkit-text-stroke: 1.5px #FFFFFF;
+  text-stroke: 1.5px #FFFFFF;
   paint-order: stroke fill;
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.2),
+    0 0 8px rgba(255, 255, 255, 0.08),
+    2px 2px 4px rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 1024px) {
+  .hero-name-stroke {
+    -webkit-text-stroke: 2px #FFFFFF;
+    text-stroke: 2px #FFFFFF;
+    text-shadow:
+      0 0 3px rgba(255, 255, 255, 0.22),
+      0 0 10px rgba(255, 255, 255, 0.09),
+      2px 2px 5px rgba(255, 255, 255, 0.09);
+  }
 }
 
 /* Smooth reveal animation */

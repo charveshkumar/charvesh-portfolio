@@ -1,10 +1,11 @@
 import React from 'react';
 import { achievements } from '../data/achievements';
+import { ShieldCheck } from 'lucide-react';
 
 export default function Achievements() {
   return (
     <section id="achievements" className="w-full py-28 bg-[#08090D] border-b border-[#F1EEE8]/10 relative">
-      <div className="w-full max-w-[1800px] mx-auto px-6 sm:px-10 md:px-16">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-10 md:px-16">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end pb-8 mb-16 border-b border-[#F1EEE8]/10">
@@ -56,6 +57,18 @@ export default function Achievements() {
                   <p className="text-sm text-[#777772] font-light leading-relaxed">
                     {item.description}
                   </p>
+
+                  {item.certificateUrl && (
+                    <div className="pt-2">
+                      <a
+                        href="#certifications"
+                        className="inline-flex items-center gap-1.5 font-mono text-xs text-emerald-400 hover:text-emerald-300 transition-colors"
+                      >
+                        <ShieldCheck className="w-3.5 h-3.5" />
+                        <span>Verified Certificate Available (ID: {item.certificateId})</span>
+                      </a>
+                    </div>
+                  )}
                 </div>
 
               </div>
