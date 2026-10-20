@@ -85,10 +85,10 @@ export default function Hero() {
           
           {/* GIANT NAME TYPOGRAPHY - BLACK FILL WITH WHITE OUTLINE & MILD WHITE SHADE */}
           <div className="flex flex-col items-center justify-center select-none w-full relative z-10">
-            <h1 className="font-display text-[15vw] sm:text-[16vw] md:text-[160px] lg:text-[200px] xl:text-[240px] 2xl:text-[270px] uppercase font-extrabold tracking-tight leading-[0.86] hero-name-stroke">
+            <h1 className="font-display text-[10.5vw] sm:text-[11.2vw] md:text-[112px] lg:text-[140px] xl:text-[168px] 2xl:text-[189px] uppercase font-extrabold tracking-tight leading-[0.86] hero-name-stroke">
               CHARVESH
             </h1>
-            <h1 className="font-display text-[15vw] sm:text-[16vw] md:text-[160px] lg:text-[200px] xl:text-[240px] 2xl:text-[270px] uppercase font-extrabold tracking-tight leading-[0.86] hero-name-stroke">
+            <h1 className="font-display text-[10.5vw] sm:text-[11.2vw] md:text-[112px] lg:text-[140px] xl:text-[168px] 2xl:text-[189px] uppercase font-extrabold tracking-tight leading-[0.86] hero-name-stroke">
               KUMAR
             </h1>
           </div>
